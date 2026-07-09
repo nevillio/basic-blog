@@ -1,9 +1,14 @@
-import { useState } from 'react'
-import './styles.css'
+import { Outlet } from 'react-router';
+import './styles.css';
+import { Navbar } from './Navbar.tsx';
 
 function App() {
-
-  return (<h1>Basic blog project</h1>);
+	return (
+		<>
+			<Navbar />
+			<Outlet />
+		</>
+	);
 }
 
-export default App
+export default App;
