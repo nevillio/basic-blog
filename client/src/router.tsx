@@ -2,8 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router';
 import App from './App.tsx';
 import { PostsRoute } from './pages/posts/PostsRoute.tsx';
 import { PostRoute } from './pages/posts/post/PostRoute.tsx';
-import { Todos } from './pages/Todos.tsx';
-import { Users } from './pages/Users.tsx';
+import { UsersRoute } from './pages/users/UsersRoute.tsx';
 
 export const router = createBrowserRouter([
 	{
@@ -22,8 +21,19 @@ export const router = createBrowserRouter([
 					{ path: ':postId', ...PostRoute },
 				],
 			},
-			{ path: '/users', element: <Users /> },
-			{ path: '/todos', element: <Todos /> },
+			{
+				path: 'users',
+				children: [
+					{ index: true, ...UsersRoute },
+					// { path: ':userId', ...UserRoute },
+				],
+			},
+			{
+				path: 'todos',
+				children: [
+					// { index: true, ...TodosRoute}
+				],
+			},
 		],
 	},
 ]);
