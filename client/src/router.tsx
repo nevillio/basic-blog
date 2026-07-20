@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 import App from './App.tsx';
-import { PostsRoute } from './pages/posts/PostsRoute.tsx';
-import { PostRoute } from './pages/posts/post/PostRoute.tsx';
-import { UsersRoute } from './pages/users/UsersRoute.tsx';
+import { PostRoute, PostsRoute } from './pages/posts/PostRoutes.tsx';
+import { TodosRoute } from './pages/todos/TodosRoute.tsx';
+import { UserRoute, UsersRoute } from './pages/users/UserRoutes.tsx';
 
 export const router = createBrowserRouter([
 	{
@@ -25,14 +25,12 @@ export const router = createBrowserRouter([
 				path: 'users',
 				children: [
 					{ index: true, ...UsersRoute },
-					// { path: ':userId', ...UserRoute },
+					{ path: ':userId', ...UserRoute },
 				],
 			},
 			{
 				path: 'todos',
-				children: [
-					// { index: true, ...TodosRoute}
-				],
+				children: [{ index: true, ...TodosRoute }],
 			},
 		],
 	},
