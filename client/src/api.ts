@@ -1,7 +1,16 @@
 const baseUrl = 'http://localhost:3000/';
-export const URLS = { posts: 'posts/', todos: 'todos/', users: 'users/' };
+export const URLS = {
+	posts: 'posts/',
+	todos: 'todos/',
+	users: 'users/',
+	comments: 'comments/',
+};
 
-export async function getData(signal: AbortSignal, endPoint = '', id = '') {
+export async function getData<T>(
+	signal: AbortSignal,
+	endPoint = '',
+	id = '',
+): Promise<T> {
 	let url = baseUrl + endPoint;
 
 	if (id !== '') {

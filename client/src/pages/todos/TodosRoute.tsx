@@ -2,6 +2,7 @@ import { getData, URLS } from '../../api.ts';
 import Todos from './Todos.tsx';
 
 export const TodosRoute = {
-	loader: ({ request: { signal } }) => getData(signal, URLS.todos),
+	loader: ({ request: { signal } }: LoaderParams) =>
+		getData<TodoType[]>(signal, URLS.todos),
 	element: <Todos />,
 };

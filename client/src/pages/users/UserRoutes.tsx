@@ -9,7 +9,7 @@ import { User } from './User.tsx';
 import Users from './Users.tsx';
 
 export const UsersRoute = {
-	loader: ({ request: { signal } }) => getData(signal, URLS.users),
+	loader: ({ request: { signal } }) => getData<BaseUser[]>(signal, URLS.users),
 	element: <Users />,
 };
 
@@ -20,8 +20,6 @@ export const UserRoute = {
 			getData<PostType[]>(signal, URLS.posts),
 			getData<TodoType[]>(signal, URLS.todos),
 		]);
-
-		console.log(todos[0].userId, params.userId);
 
 		const userPosts = posts.filter(
 			({ userId }) => userId.toString() === params.userId,

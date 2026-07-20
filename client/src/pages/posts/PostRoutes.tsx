@@ -5,7 +5,7 @@ import { Posts } from './Posts.tsx';
 import type { Comment, PostWithComments } from './PostTypes.ts';
 
 const loader = ({ request: { signal } }: LoaderParams) =>
-	getData<PostType>(signal, URLS.posts).catch((error) => {
+	getData<PostType[]>(signal, URLS.posts).catch((error) => {
 		throw new Error(error);
 	});
 
