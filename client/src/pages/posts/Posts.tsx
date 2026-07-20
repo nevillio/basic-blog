@@ -1,8 +1,9 @@
 import { useLoaderData } from 'react-router';
 import PostCard from './PostCard.tsx';
+import type { PostType } from './PostTypes.ts';
 
 export function Posts() {
-	const posts = useLoaderData<{ id: number; title: string; body: string }[]>();
+	const posts = useLoaderData<PostType[]>();
 
 	return (
 		<>
