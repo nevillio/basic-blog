@@ -1,33 +1,18 @@
 import { useLoaderData } from 'react-router';
-import UserCard from './user/UserCard';
-
-type BaseUser = {
-	id: number;
-	name: string;
-	email: string;
-	website: string;
-};
-
-type RawUser = BaseUser & {
-	company: Record<string, any>;
-};
-
-export type User = BaseUser & {
-	companyName: string;
-};
+import type { BaseUser } from '../../types.ts';
+import UserCard from './UserCard';
 
 export default function Users() {
-	const data: RawUser[] = useLoaderData();
+	const data: BaseUser[] = useLoaderData();
 
 	return (
 		<div className='container'>
 			<h1 className='page-title'>Users</h1>
 			<div className='card-grid'>
-				{data.map(({ id, company, ...user }) => (
+				{data.map(({ id, ...user }) => (
 					<UserCard
 						key={id}
 						id={id}
-						companyName={company.name}
 						{...user}
 					/>
 				))}
