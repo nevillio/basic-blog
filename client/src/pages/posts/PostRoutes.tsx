@@ -20,11 +20,11 @@ export const PostRoute = {
 		request: { signal },
 		params,
 	}: LoaderParams): Promise<PostWithComments> => {
-		const post = await getData<PostType>(signal, URLS.posts, params.postId);
+		const post = await getData<PostType>(signal, URLS.posts, params!.postId);
 		const comments = await getData<Comment[]>(signal, URLS.comments);
 
 		const filteredComments = comments.filter(
-			({ postId }) => postId.toString() === params.postId,
+			({ postId }) => postId.toString() === params!.postId,
 		);
 		return { ...post, comments: filteredComments };
 	},
