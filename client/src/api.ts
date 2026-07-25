@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000/';
+const baseUrl = import.meta.env.VITE_URL;
 export const URLS = {
 	posts: 'posts/',
 	todos: 'todos/',
