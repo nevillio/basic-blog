@@ -1,4 +1,4 @@
-import type { PostType } from '../../types.ts';
+import type { PostType } from '@/types.ts';
 
 export type Comment = {
 	id: number;

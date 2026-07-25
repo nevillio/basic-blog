@@ -1,5 +1,5 @@
-import { getData, URLS } from '../../api.ts';
-import type { LoaderParams, PostType } from '../../types.ts';
+import { getData, URLS } from '@/api.ts';
+import type { LoaderParams, PostType } from '@/types.ts';
 import { Post } from './Post.tsx';
 import { Posts } from './Posts.tsx';
 import type { Comment, PostWithComments } from './PostTypes.ts';

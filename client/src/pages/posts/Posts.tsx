@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router';
-import type { PostType } from '../../types.ts';
+import type { PostType } from '@/types.ts';
 import PostCard from './PostCard.tsx';
 
 export function Posts() {

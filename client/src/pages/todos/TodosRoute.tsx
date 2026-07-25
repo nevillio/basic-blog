@@ -1,4 +1,5 @@
-import { getData, URLS } from '../../api.ts';
+import { getData, URLS } from '@/api.ts';
+import type { LoaderParams, TodoType } from '@/types.ts';
 import Todos from './Todos.tsx';
 
 export const TodosRoute = {

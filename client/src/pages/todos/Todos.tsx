@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router';
-import type { TodoType } from '../../types.ts';
+import type { TodoType } from '@/types.ts';
 
 export default function Todos() {
 	const todos = useLoaderData<TodoType[]>();

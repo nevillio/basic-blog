@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate } from 'react-router';
-import App from './App.tsx';
-import { PostRoute, PostsRoute } from './pages/posts/PostRoutes.tsx';
-import { TodosRoute } from './pages/todos/TodosRoute.tsx';
-import { UserRoute, UsersRoute } from './pages/users/UserRoutes.tsx';
+import App from '@/App';
+import { PostRoute, PostsRoute } from '@/pages/posts/PostRoutes.tsx';
+import { TodosRoute } from '@/pages/todos/TodosRoute.tsx';
+import { UserRoute, UsersRoute } from '@/pages/users/UserRoutes.tsx';
 
 export const router = createBrowserRouter([
 	{

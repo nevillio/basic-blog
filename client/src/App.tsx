@@ -1,6 +1,6 @@
 import { Outlet, useNavigation } from 'react-router';
 import './styles.css';
-import { Navbar } from './Navbar.tsx';
+import { Navbar } from '@/Navbar';
 
 function App() {
 	const { state } = useNavigation();
