@@ -1,22 +1,17 @@
-import { getData, URLS } from '../../api.ts';
-import type {
-	BaseUser,
-	LoaderParams,
-	PostType,
-	TodoType,
-} from '../../types.ts';
+import { getData, URLS } from '@/api.ts';
+import type { LoaderParams, PostType, TodoType, UserType } from '@/types.ts';
 import { User } from './User.tsx';
 import Users from './Users.tsx';
 
 export const UsersRoute = {
-	loader: ({ request: { signal } }) => getData<BaseUser[]>(signal, URLS.users),
+	loader: ({ request: { signal } }) => getData<UserType[]>(signal, URLS.users),
 	element: <Users />,
 };
 
 export const UserRoute = {
 	loader: async ({ request: { signal }, params }: LoaderParams) => {
 		const [userData, posts, todos] = await Promise.all([
-			getData<BaseUser>(signal, URLS.users, params.userId),
+			getData<UserType>(signal, URLS.users, params.userId),
 			getData<PostType[]>(signal, URLS.posts),
 			getData<TodoType[]>(signal, URLS.todos),
 		]);

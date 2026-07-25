@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import type { BaseUser } from '../../types.ts';
+import type { UserType } from '@/types.ts';
 
 export default function UserCard({
 	id,
@@ -7,7 +7,7 @@ export default function UserCard({
 	company: { name: companyName },
 	website,
 	email,
-}: BaseUser) {
+}: UserType) {
 	return (
 		<div className='card'>
 			<div className='card-header'>{name}</div>

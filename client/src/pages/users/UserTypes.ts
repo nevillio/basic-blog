@@ -1,11 +1,3 @@
-import type { BaseUser, PostType, TodoType } from '../../types.ts';
+import type { PostType, TodoType, UserType } from '@/types.ts';
 
-export type RawUser = BaseUser & {
-	company: Record<string, any>;
-};
-
-export type User = BaseUser & {
-	companyName: string;
-};
-
-export type UserPage = BaseUser & { todos: TodoType[] } & { posts: PostType[] };
+export type UserPage = UserType & { todos: TodoType[] } & { posts: PostType[] };

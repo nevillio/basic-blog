@@ -7,7 +7,7 @@ export type PostType = {
 	body: string;
 };
 
-export type BaseUser = {
+export type UserType = {
 	id: number;
 	name: string;
 	email: string;
