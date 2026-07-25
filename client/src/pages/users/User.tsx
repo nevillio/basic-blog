@@ -47,7 +47,12 @@ export function User() {
 							<div className='card-preview-text'>{body}</div>
 						</div>
 						<div className='card-footer'>
-							<Link to='/posts'>View</Link>
+							<Link
+								to={`/posts/${id}`}
+								className='btn'
+							>
+								View
+							</Link>
 						</div>
 					</div>
 				))}

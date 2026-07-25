@@ -16,7 +16,7 @@ export default function PostCard({ id, title, body }: Props) {
 			<div className='card-footer'>
 				<Link
 					className='btn'
-					to={`${id.toString()}`}
+					to={id.toString()}
 				>
 					View
 				</Link>
