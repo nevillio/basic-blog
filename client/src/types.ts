@@ -23,5 +23,13 @@ export type TodoType = {
 	userId: number;
 };
 
+export type Comment = {
+	id: number;
+	name?: string;
+	email: string;
+	body: string;
+	postId: number;
+};
+
 export type Request = { signal: AbortSignal };
 export type LoaderParams = { request: Request; params?: Params<string> };
