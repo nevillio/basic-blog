@@ -1,9 +1,9 @@
 const baseUrl = import.meta.env.VITE_URL;
+
 export const URLS = {
-	posts: 'posts/',
-	todos: 'todos/',
-	users: 'users/',
-	comments: 'comments/',
+	posts: 'posts',
+	todos: 'todos',
+	users: 'users',
 };
 
 export async function getData<T>(
