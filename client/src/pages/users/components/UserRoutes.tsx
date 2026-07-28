@@ -11,11 +11,11 @@ export const UsersRoute = {
 };
 
 export const UserRoute = {
-	loader: async ({ request: { signal }, params }: LoaderParams) => {
+	loader: async ({ request: { signal }, params: { userId } }: LoaderParams) => {
 		const [userData, posts, todos] = await Promise.all([
-			getUser(signal, params!.userId),
-			getUserPosts(signal, params.userId),
-			getUserTodos(signal, params.userId),
+			getUser(signal, userId),
+			getUserPosts(signal, userId),
+			getUserTodos(signal, userId),
 		]);
 
 		return { ...userData, posts, todos };

@@ -16,10 +16,10 @@ export const PostRoute = {
 	element: <Post />,
 	loader: async ({
 		request: { signal },
-		params,
+		params: { postId },
 	}: LoaderParams): Promise<PostPage> => {
-		const comments = getComments(signal, params!.postId);
-		const post = await getPost(signal, params!.postId);
+		const comments = getComments(signal, postId);
+		const post = await getPost(signal, postId);
 		const user = getUser(signal, post.userId.toString());
 
 		return { ...post, comments: await comments, name: (await user).name };
