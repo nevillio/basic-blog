@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router';
 import type { UserType } from '@/types.ts';
-import UserCard from './UserCard';
+import UserCard from './components/UserCard';
 
 export default function Users() {
 	const data: UserType[] = useLoaderData();

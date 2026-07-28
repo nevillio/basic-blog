@@ -2,8 +2,8 @@ import { createBrowserRouter, Navigate } from 'react-router';
 import App from '@/App';
 import ErrorElement from '@/ErrorPage';
 import { PostRoute, PostsRoute } from '@/pages/posts/components/PostRoutes.tsx';
-import { TodosRoute } from '@/pages/todos/TodosRoute.tsx';
-import { UserRoute, UsersRoute } from '@/pages/users/UserRoutes.tsx';
+import { TodosRoute } from '@/pages/todos/components/TodosRoute.tsx';
+import { UserRoute, UsersRoute } from '@/pages/users/components/UserRoutes.tsx';
 
 export const router = createBrowserRouter([
 	{
