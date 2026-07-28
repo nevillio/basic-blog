@@ -1,13 +1,6 @@
-import type { PostType } from '@/types.ts';
+import type { Comment, PostType } from '@/types.ts';
 
-export type Comment = {
-	id: number;
-	name?: string;
-	email: string;
-	body: string;
-	postId: number;
-};
-
-export type PostWithComments = PostType & {
+export type PostPage = PostType & {
 	comments: Comment[];
+	name: string;
 };

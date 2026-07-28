@@ -3,7 +3,7 @@ import { getUser } from '@/api/users.ts';
 import type { LoaderParams } from '@/types.ts';
 import { Post } from '../Post.tsx';
 import { Posts } from '../Posts.tsx';
-import type { PostWithComments } from '../PostTypes.ts';
+import type { PostPage } from '../PostTypes.ts';
 
 const loader = ({ request: { signal } }: LoaderParams) => getPosts(signal);
 
@@ -17,7 +17,7 @@ export const PostRoute = {
 	loader: async ({
 		request: { signal },
 		params,
-	}: LoaderParams): Promise<PostWithComments> => {
+	}: LoaderParams): Promise<PostPage> => {
 		const comments = getComments(signal, params!.postId);
 		const post = await getPost(signal, params!.postId);
 		const user = getUser(signal, post.userId.toString());
