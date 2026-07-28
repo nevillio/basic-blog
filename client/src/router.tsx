@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 import App from '@/App';
 import ErrorElement from '@/ErrorPage';
-import { PostRoute, PostsRoute } from '@/pages/posts/PostRoutes.tsx';
+import { PostRoute, PostsRoute } from '@/pages/posts/components/PostRoutes.tsx';
 import { TodosRoute } from '@/pages/todos/TodosRoute.tsx';
 import { UserRoute, UsersRoute } from '@/pages/users/UserRoutes.tsx';
 
