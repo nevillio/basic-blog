@@ -1,10 +1,19 @@
-# Before Getting Started
+# Create a Blog Application
 
-This project has two folders. The `api` folder contains the code for the fake API we will be using, while the `client` folder contains the static HTML files for each page in our application as well as the CSS file for all the styling needed. In order to start the API you need to run `npm run dev` inside the `api` folder (make sure you run `npm i` first to install the dependencies). This should start up an API on `http://localhost:3000`. This API is built on the [json-server](https://www.npmjs.com/package/json-server) package, which is a great tool for quickly building fake APIs. Essentially, whenever you make a request to the API it will read/write to the `db.json` file to get your data. I also included a `db.example.json` file which is the same as the `db.json` file, but it will never be modified so if you want to reset the API data to its original state you can copy the JSON from the `db.example.json` file into the `db.json` file.
+## Introduction
+
+### Project Setup
+
+- This project has two folders:
+  - The `api` folder contains the code for the fake API we will be using.
+  - The `client` folder contains all html, css and react code for the client.
+- Start the API with `pnpm dev` after installing all the dependencies.
+- Start the client with `pnpm dev` from the `client` directory.
+- If you need to reset the database, copy the `db.example.json` file to `db.json`.
 
 The goal of this project is to create an application that renders out all of the data from the API. This API contains data on users, comments, posts, and todos.
 
-# API Information
+## API Information
 
 The API has the following endpoints:
 
@@ -16,8 +25,15 @@ The API has the following endpoints:
 - `GET /posts?userId=<userId>` - Returns all of the posts for a single user
 - `GET /todos` - Returns all of the todos
 - `GET /todos?userId=<userId>` - Returns all of the todos for a single user
+- `POST /posts` - Create a new post
+- `PUT /posts/:id` - Update a post
+- `GET /posts?q=<query>&userId=<userId>` - Returns all of the posts that match the query and userId
 
-# Instructions
+## Instructions
+
+### Basic Blog
+
+#### Essentials
 
 1. Create a nav bar that contains links to the following pages:
    - Posts
@@ -29,10 +45,30 @@ The API has the following endpoints:
 5. Create a Post page that renders out the post title, and body.
 6. Create a User page that renders out the user name, company name, email, website, and address.
 
-## Bonus:
+#### Bonus
 
 1. Add a loading spinner that shows while the data is being fetched. Make sure this only renders over the main content area and does not cover up the navbar.
 2. Add a 404 error page that still shows the navbar, but renders a 404 error message inside the main content area.
 3. Add an error page that renders a generic error message in production, but renders the full error message and stack trace in development.
 4. On the Post page render out all of the comments for that post as well as the name for the user that created the post. Make the user name is a link to the user page.
 5. On the User page render out all of the posts that user created in a grid format as well as all the todos that user has in a list format.
+
+### Advanced Blog
+
+#### Essentials
+
+1. Create a New Post page that renders out a form that allows the user to create a new post. Don't forget to add a button to the Posts page linking to the New Post page. The form should have the following fields:
+   - Title
+   - Body
+   - Author (User)
+2. Create an Edit Post page that renders out a form that allows the user to edit an existing post. The form should be identical to the new post form. Don't forget to add a button to the Post page linking to the Edit Post page.
+3. Add a filter to the Posts page that allows the user to filter the posts by a query.
+
+#### Bonus
+
+1. Add a filter to the Posts page that allows the user to filter the posts by a user.
+2. Disable the submit button on the New Post and Edit Post if the form is being submitted.
+3. Handle the following validations on the New Post and Edit Post pages:
+   - Title is required
+   - Body is required
+   - User is required
