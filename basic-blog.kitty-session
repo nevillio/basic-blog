@@ -1,0 +1,7 @@
+layout splits
+
+cd /home/nevillio/personal/frontend/react/basic-blog/
+launch --title "Build Basic blog" /usr/bin/nvim
+launch --cwd /opt/src/awrit --location=vsplit --bias 33 ./awrit
+launch --cwd /home/nevillio/personal/frontend/react/basic-blog/client --location=hsplit --bias 25 pnpm dev
+launch --cwd /home/nevillio/personal/frontend/react/basic-blog/api --location=vsplit --bias 50 pnpm dev
